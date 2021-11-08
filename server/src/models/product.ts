@@ -24,8 +24,12 @@ const productSchema = new mongoose.Schema({
   rating: {
     type: String,
   },
+  category: {
+    type: String,
+    required: true,
+  },
 });
 
-const product = mongoose.model("Product", productSchema);
+const Product = mongoose.model("Product", productSchema);
 
-export default product;
+export default Product;

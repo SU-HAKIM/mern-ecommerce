@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 
 //?internal modules
 import clientRouter from "./routes/clientRoute";
+import adminRouter from "./routes/adminRoute";
+import productRouter from "./routes/productRoute";
 
 dotenv.config();
 
@@ -22,6 +24,8 @@ app.get("/", (req: Request, res: Response) => {
   res.send("hakim");
 });
 app.use("/client", clientRouter);
+app.use("/admin", adminRouter);
+app.use("/products", productRouter);
 
 mongoose
   .connect("mongodb://localhost:27017/mern-ecommerce")
